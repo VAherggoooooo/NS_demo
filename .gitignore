@@ -1,0 +1,9 @@
+
+*.csproj
+.vs/NS_demo/v16/.suo
+.vscode/settings.json
+.vsconfig
+Library
+Logs
+obj
+Temp

@@ -267,13 +267,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oriTex: {fileID: 2800000, guid: fadf6f9c40b171b479245a6d40116c43, type: 3}
-  velTex: {fileID: 2800000, guid: ac320f6b94fec334ba345ca5de90ec4a, type: 3}
   simMat: {fileID: 2100000, guid: 16b5dd9a9cf4a344ca2df95c72415be1, type: 2}
-  diffusionTimes: 6
+  diffusionTimes: 3
   forceScale: 200
   radius: 0.2
   advectSpeed: 1
-  vscosity: 1
+  vscosity: 0.5
 --- !u!33 &1615010821
 MeshFilter:
   m_ObjectHideFlags: 0

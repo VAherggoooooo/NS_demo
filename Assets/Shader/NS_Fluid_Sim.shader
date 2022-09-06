@@ -1,59 +1,57 @@
-Shader "NS_Fluid_Sim"
+Shader "Hidden/NS_Fluid_Sim"
 {
     SubShader
     {
-        Pass//0
+        HLSLINCLUDE
+        #include "NS_Include.hlsl"
+        ENDHLSL
+
+        Pass//0 Advect
         {
             Name "Advect"
             HLSLPROGRAM
             #pragma vertex vert_common
             #pragma fragment frag_advect
-            #include "NS_Include.hlsl"
             ENDHLSL
         }
-        Pass//1
+        Pass//1 Diffusion
         {
             Name "Diffusion"
             HLSLPROGRAM
-            #pragma vertex vert_common
+            #pragma vertex vert_neighbor
             #pragma fragment frag_diffusion
-            #include "NS_Include.hlsl"
             ENDHLSL
         }
-        Pass//2
+        Pass//2 Force
         {
             Name "Force"
             HLSLPROGRAM
             #pragma vertex vert_common
             #pragma fragment frag_force
-            #include "NS_Include.hlsl"
             ENDHLSL
         }
-        Pass//3
+        Pass//3 Divergence
         {
             Name "Divergence"
             HLSLPROGRAM
-            #pragma vertex vert_common
+            #pragma vertex vert_neighbor
             #pragma fragment frag_divergence
-            #include "NS_Include.hlsl"
             ENDHLSL
         }
-        Pass//4
+        Pass//4 Presure
         {
             Name "Presure"
             HLSLPROGRAM
-            #pragma vertex vert_common
+            #pragma vertex vert_neighbor
             #pragma fragment frag_presure
-            #include "NS_Include.hlsl"
             ENDHLSL
         }
-        Pass//5
+        Pass//5 Gradient
         {
             Name "Gradient"
             HLSLPROGRAM
-            #pragma vertex vert_common
+            #pragma vertex vert_neighbor
             #pragma fragment frag_gradient
-            #include "NS_Include.hlsl"
             ENDHLSL
         }
     }

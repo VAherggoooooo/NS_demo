@@ -76,7 +76,7 @@ v2f vert_neighbor (appdata v)
 float4 frag_advect (v2f i) : SV_Target
 {
     float2 vel = tex2D(_Tex0, i.uv).xy;
-    float2 newUV = i.uv - vel * dt * dx * advectSpeed * 0.2;
+    float2 newUV = i.uv - vel * dt * advectSpeed * 0.2;
     return tex2D(_Tex1, newUV);
 }
 
@@ -111,8 +111,8 @@ float4 frag_divergence (v2f i) : SV_Target
     float4 R = tex2D(_Tex0, i.uvR);
     float4 T = tex2D(_Tex0, i.uvT);
     float4 B = tex2D(_Tex0, i.uvB);
-    float4 C = tex2D(_Tex0, i.uv);
 
+    float4 C = tex2D(_Tex0, i.uv);
     //边界处理
     if(i.uvL.x <= 0) L = -C;
     if(i.uvR.x >= 1) R = -C;
